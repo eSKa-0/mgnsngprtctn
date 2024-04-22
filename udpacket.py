@@ -12,3 +12,4 @@ class Udp:
 
 transmit1 = Udp("10.10.10.90", 5005, b"hello world")
 transmit1.sendPacketUdp()
+print("quitting program")
