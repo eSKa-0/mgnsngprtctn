@@ -32,10 +32,19 @@ print(
        ░        ░                   ░  ░░ ░      ░  ░      ░  ░        
               ░                         ░                              
     """)
-ip = str(input("to what ip would you like to send a packet to?\n"))
-pt = int(input("what port should it be send to?\n"))
-ms = input("what should the message be?\n")
-transmit1 = Udp(ip, pt, ms)
-transmit1.sendPacketUdp()
-print(f"Udp packet with message: {ms} send to {ip}:{pt}")
+md = int(input("Would you like to send a TCP or an UDP packet? (1/2)\n")
+if md == 1:
+    ip = str(input("to what ip would you like to send a packet to?\n"))
+    pt = int(input("what port should it be send to?\n"))
+    ms = input("what should the message be?\n")
+    transmit = Udp(ip, pt, ms)
+    transmit.sendPacketUdp()
+    print(f"UDP packet with message: {ms} send to {ip}:{pt}")
+if md == 2:
+    ip = str(input("to what ip would you like to send a packet to?\n"))
+    pt = int(input("what port should it be send to?\n"))
+    ms = input("what should the message be?\n")
+    transmit = Tcp(ip, pt, ms)
+    transmit.sendPacketTcp
+    print(f"TCP packet with message: {ms} send to {ip}:{pt}")
 print("Quitting program...")
