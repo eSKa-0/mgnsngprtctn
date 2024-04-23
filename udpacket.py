@@ -10,6 +10,15 @@ class Udp:
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sock.sendto(self.message, (self.target, self.port))
 
+class Tcp:
+    def __init__(self, targetIp, port, message):
+        self.target = targetIp
+        self.port = port
+        self.message = message.encode(utf-8)
+    def sendPacketTcp(self):
+        sock = socket.socket(socket.AF_INET, socket.TCP_STREAM)
+        sock.sendto(self.message, (self.target, self.port))
+
 print(
     """
      █    ██ ▓█████▄  ██▓███   ▄▄▄       ▄████▄   ██ ▄█▀▓█████▄▄▄█████▓
