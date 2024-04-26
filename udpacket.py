@@ -1,15 +1,5 @@
 import socket
 
-
-class Udp:
-    def __init__(self, targetIp, port, message):
-        self.target = targetIp
-        self.port = port
-        self.message = message.encode()
-    def sendPacketUdp(self):
-        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        sock.sendto(self.message, (self.target, self.port))
-bool = True
 print(
     """
      █    ██ ▓█████▄  ██▓███   ▄▄▄       ▄████▄   ██ ▄█▀▓█████▄▄▄█████▓
@@ -23,6 +13,16 @@ print(
        ░        ░                   ░  ░░ ░      ░  ░      ░  ░        
               ░                         ░                              
     """)
+class Udp:
+    def __init__(self, targetIp, port, message):
+        self.target = targetIp
+        self.port = port
+        self.message = message.encode()
+    def sendPacketUdp(self):
+        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        sock.sendto(self.message, (self.target, self.port))
+bool = True
+
 while bool == True:
     ip = str(input("to what ip would you like to send a packet to?\n"))
     if ip == "":
