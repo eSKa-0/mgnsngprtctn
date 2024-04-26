@@ -16,9 +16,9 @@ print(
 """
 )
 
-dst_host = "127.0.0.1"
-dst_port = 5432
-payload = "W mans"
+dst_host = str(input("\u001b[35m[?]\u001b[0m\thost? "))
+dst_port = int(input("\u001b[35m[?]\u001b[0m\tport? "))
+payload = str(input("\u001b[35m[?]\u001b[0m\tpayload? "))
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((dst_host, dst_port))
