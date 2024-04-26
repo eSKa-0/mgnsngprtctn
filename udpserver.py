@@ -1,8 +1,8 @@
 import socket
 import time
 
-host = "127.0.0.1"
-port = 5005
+host = str(input("\u001b[35m[?]\u001b[0m\thost? "))
+port = int(input("\u001b[35m[?]\u001b[0m\tport? "))
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.bind((host, port))

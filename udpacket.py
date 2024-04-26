@@ -24,12 +24,12 @@ class Udp:
 bool = True
 
 while bool == True:
-    ip = str(input("to what ip would you like to send a packet to?\n"))
+    ip = str(input("\u001b[35m[?]\u001b[0m\thost? "))
     if ip == "":
         bool = False
     else:
-        pt = int(input("what port should it be send to?\n"))
-        ms = input("what should the message be?\n")
+        pt = int(input("\u001b[35m[?]\u001b[0m\tport? "))
+        ms = input("\u001b[35m[?]\u001b[0m\tpayload? ")
         transmit1 = Udp(ip, pt, ms)
         transmit1.sendPacketUdp()
         print(f"Udp packet with message: {ms} send to {ip}:{pt}")
