@@ -15,9 +15,10 @@ class Connection:
         s.sendto(self.message,(self.dst_host, self.dst_port))
     def check(self):
         data, client = s.recvfrom(1024)
+	data = data.decode("UTF-8")
         sender_ip = client[0]
         sender_port = client[1]
-        print(f"\u001b[36m[!]\u001b[0m\t{data.decode("UTF-8")} received from {sender_ip}:{sender_port}")
+        print(f"\u001b[36m[!]\u001b[0m\t{data} received from {sender_ip}:{sender_port}")
 src_host= str(input("\u001b[35m[?]\u001b[0m\tsource adress? "))
 src_port= int(input("\u001b[35m[?]\u001b[0m\tsource port? "))
 dst_host= str(input("\u001b[35m[?]\u001b[0m\ttarget adress? "))
